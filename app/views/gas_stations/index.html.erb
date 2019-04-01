@@ -63,6 +63,7 @@
       <div class="caption">
         <h3><%= gas_station.id_station%> / <%= gas_station.name %></h3>
       </div>
+      <p>Correo de contacto:<%= gas_station.user.email if gas_station.user %> </p>
       <%= image_tag gas_station.image,
       class: 'img-responsive center-block',
       style:'max-height:150px;' %>
