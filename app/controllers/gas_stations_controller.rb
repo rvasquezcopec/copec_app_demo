@@ -1,11 +1,11 @@
 class GasStationsController < ApplicationController
   before_action :set_gas_station, only: [:show, :edit, :update, :destroy]
-
+before_action :authenticate_user!, except: [:index]
   # GET /gas_stations
   # GET /gas_stations.json
   def index
     @gas_stations = GasStation.all
-  end
+end
 
   # GET /gas_stations/1
   # GET /gas_stations/1.json

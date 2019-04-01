@@ -1,0 +1,32 @@
+<div class="container">
+
+<h2>Ingrese usuario y clave</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+      <%= f.label :"Usuario" %><br />
+
+    <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"Clave" %><br />
+    <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :"Recuerdame" %>
+    </div>
+  <% end %>
+
+<p> </p>
+  <div class="actions">
+    <%= f.submit "Ingresar", class: 'btn btn-primary'%>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
